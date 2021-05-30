@@ -1,10 +1,14 @@
 <template lang="pug">
-    h1 Hello Vue World
+    h1 {{message}}
 
 </template>
 <script>
 export default{
-    
+    data(){
+        return {
+            message :"Hello Vue World?"
+        }
+    }
 }
 </script>
 <style>
