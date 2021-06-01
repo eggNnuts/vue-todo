@@ -1,5 +1,5 @@
 // 개발용과 제품용에 공통된 옵션
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const pathModule = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -45,8 +45,18 @@ module.exports=(env,opts)=>{
                   use: [
                       // loader 체이닝
                       'vue-style-loader',
-                      'css-loader'
+                      'css-loader',
+                      'postcss-loader'
                   ]
+               },
+               {
+                 test : /\.scss$/,
+                 use :[
+                    'vue-style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
+                 ]
                }
             ]
         },
