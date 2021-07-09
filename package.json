@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "npx webpack",
-    "lint":"eslint --ext .js,.vue .",
-    "lint:fix":"eslint --fix --ext .js,.vue .",
+    "lint": "eslint --ext .js,.vue .",
+    "lint:fix": "eslint --fix --ext .js,.vue .",
     "dev": "webpack serve"
   },
   "keywords": [
@@ -57,7 +57,12 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
+    "lowdb": "^2.1.0",
     "node-gyp": "^8.1.0",
+    "path-browserify": "^1.0.1",
+    "steno": "^1.0.0",
     "vue": "^2.6.13"
   }
 }

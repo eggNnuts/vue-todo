@@ -1,20 +1,14 @@
 <template lang="pug">
-    h1 {{message}}
+    todo-app
 </template>
-<script>
+<script >
+import TodoApp from './components/TodoApp'
 export default {
-  data () {
-    return {
-      message: 'Hello Vue World?'
-    }
+  components:{
+     TodoApp
   }
 }
 </script>
 <style scoped lang="scss">
-$color:blue;
-
-h1 {
-    color: $color;
-    display: flex;
-}
+ 
 </style>
