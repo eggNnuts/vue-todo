@@ -1,11 +1,14 @@
 // 개발용과 제품용에 공통된 옵션
 const { merge } = require('webpack-merge')
+const webpack = require("webpack");
 const pathModule = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 require('@babel/polyfill')
+
+
 
 module.exports = (env, opts) => {
   const isDevMode = 'WEBPACK_SERVE' in env && env.WEBPACK_SERVE
@@ -16,7 +19,10 @@ module.exports = (env, opts) => {
         '.vue', '.js', '.css'
       ],
       fallback:{
-        "path": require.resolve("path-browserify")
+        "path": require.resolve("path-browserify"),
+        "util": require.resolve("util/"),
+        "crypto": false
+       
       }
     },
     
