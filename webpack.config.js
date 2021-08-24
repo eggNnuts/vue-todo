@@ -1,5 +1,6 @@
 // 개발용과 제품용에 공통된 옵션
 const { merge } = require('webpack-merge')
+
 const webpack = require("webpack");
 const pathModule = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
@@ -83,8 +84,11 @@ module.exports = (env, opts) => {
       // 특정한 디렉토리와 파일을 from에 지정해줘서, 지정한 경로 to에 설정하여 이동시켜주는 플러그인
       // to를 비워 두면 output에 설정된 디렉토리임
       new CopyPlugin({
-        patterns: [{ from: 'assets/', to: '' }
-        ] })
+        patterns: [{ from: 'assets/', to: '' }] 
+      }),
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+      })
     ]
   }
 
